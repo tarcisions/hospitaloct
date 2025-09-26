@@ -138,6 +138,7 @@ CSRF_TRUSTED_ORIGINS = [
     'https://*.replit.dev',
     'https://*.repl.co',
     'https://*.replit.app',
+    'https://hospitaloct.onrender.com',
 ]
 
 # Configurações adicionais para desenvolvimento no Replit
