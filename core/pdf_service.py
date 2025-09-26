@@ -8,7 +8,7 @@ from django.conf import settings
 from django.utils import timezone
 import os
 import io
-
+#Teste
 def gerar_laudo_pdf(exame):
     """
     Gera um laudo PDF profissional para um exame OCT
