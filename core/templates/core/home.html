@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema OCT Premium</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="/static/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-premium">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'home' %}">
+                <i class="fas fa-eye me-2"></i>Sistema OCT Premium
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link" href="{% url 'paciente_list' %}">
+                        <i class="fas fa-users me-1"></i>Pacientes
+                    </a>
+                    <a class="nav-link" href="{% url 'exame_create' %}">
+                        <i class="fas fa-plus-circle me-1"></i>Novo Exame
+                    </a>
+                    <a class="nav-link" href="{% url 'logout' %}">
+                        <i class="fas fa-sign-out-alt me-1"></i>Sair
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container-fluid">
+        <div class="main-container fade-in-up">
+            <div class="text-center mb-5">
+                <h1 class="display-4 text-primary mb-3">
+                    <i class="fas fa-eye text-secondary me-3"></i>
+                    Bem-vindo ao Sistema OCT Premium
+                </h1>
+                <p class="lead text-muted">
+                    Análise inteligente de exames OCT com tecnologia de IA avançada
+                </p>
+                <p class="text-primary fw-bold">
+                    <i class="fas fa-user-md me-2"></i>
+                    {{ user.get_full_name|default:user.username }}
+                </p>
+            </div>
+            
+            <!-- Cards de Estatísticas -->
+            <div class="row mb-5">
+                <div class="col-md-6 mb-4">
+                    <div class="card-premium fade-in-up">
+                        <div class="card-body text-center">
+                            <div class="d-flex align-items-center justify-content-center mb-3">
+                                <div class="bg-primary rounded-circle p-3 me-3">
+                                    <i class="fas fa-users fa-2x text-white"></i>
+                                </div>
+                                <div>
+                                    <h2 class="text-primary mb-0">{{ pacientes_count }}</h2>
+                                    <h5 class="text-muted">Pacientes Cadastrados</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card-premium fade-in-up">
+                        <div class="card-body text-center">
+                            <div class="d-flex align-items-center justify-content-center mb-3">
+                                <div class="bg-success rounded-circle p-3 me-3">
+                                    <i class="fas fa-microscope fa-2x text-white"></i>
+                                </div>
+                                <div>
+                                    <h2 class="text-success mb-0">{{ exames_count }}</h2>
+                                    <h5 class="text-muted">Exames Realizados</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Ações Rápidas -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <div class="card-premium">
+                        <div class="card-header">
+                            <i class="fas fa-bolt me-2"></i>Ações Rápidas
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    <a href="{% url 'paciente_create' %}" class="btn btn-premium btn-primary-premium w-100 pulse">
+                                        <i class="fas fa-user-plus me-2"></i>Novo Paciente
+                                    </a>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <a href="{% url 'exame_create' %}" class="btn btn-premium btn-success-premium w-100 pulse">
+                                        <i class="fas fa-camera me-2"></i>Novo Exame OCT
+                                    </a>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <a href="{% url 'paciente_list' %}" class="btn btn-premium btn-warning-premium w-100">
+                                        <i class="fas fa-list me-2"></i>Ver Pacientes
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Exames Recentes -->
+            {% if exames_recentes %}
+            <div class="row">
+                <div class="col-12">
+                    <div class="card-premium">
+                        <div class="card-header">
+                            <i class="fas fa-history me-2"></i>Exames Recentes
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-premium mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th><i class="fas fa-user me-1"></i>Paciente</th>
+                                            <th><i class="fas fa-calendar me-1"></i>Data</th>
+                                            <th><i class="fas fa-info-circle me-1"></i>Status</th>
+                                            <th><i class="fas fa-cogs me-1"></i>Ações</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for exame in exames_recentes %}
+                                        <tr>
+                                            <td>
+                                                <strong>{{ exame.paciente.nome }}</strong>
+                                                <br><small class="text-muted">{{ exame.paciente.prontuario|default:"S/N" }}</small>
+                                            </td>
+                                            <td>{{ exame.data_exame|date:"d/m/Y H:i" }}</td>
+                                            <td>
+                                                <span class="status-badge 
+                                                    {% if exame.status == 'concluido' %}bg-success
+                                                    {% elif exame.status == 'analisando' %}bg-warning
+                                                    {% elif exame.status == 'erro' %}bg-danger
+                                                    {% else %}bg-secondary{% endif %}">
+                                                    {{ exame.get_status_display }}
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <a href="{% url 'exame_analyze' exame.id %}" class="btn btn-sm btn-premium btn-primary-premium">
+                                                    <i class="fas fa-eye me-1"></i>Ver Detalhes
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% else %}
+            <div class="row">
+                <div class="col-12">
+                    <div class="card-premium">
+                        <div class="card-body text-center py-5">
+                            <i class="fas fa-microscope fa-4x text-muted mb-4"></i>
+                            <h4 class="text-muted">Nenhum exame realizado ainda</h4>
+                            <p class="text-muted">Comece criando seu primeiro exame OCT</p>
+                            <a href="{% url 'exame_create' %}" class="btn btn-premium btn-success-premium mt-3">
+                                <i class="fas fa-plus-circle me-2"></i>Criar Primeiro Exame
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

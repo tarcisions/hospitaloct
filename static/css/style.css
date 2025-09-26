@@ -1,0 +1,584 @@
+
+/* Sistema OCT - Estilo Profissional Office */
+:root {
+    --primary-color: #2c5aa0;
+    --secondary-color: #4472c4;
+    --accent-color: #c5504b;
+    --success-color: #70ad47;
+    --warning-color: #ffc000;
+    --light-bg: #f8f9fa;
+    --white-bg: #ffffff;
+    --dark-text: #333333;
+    --medium-text: #555555;
+    --light-text: #777777;
+    --border-color: #e1e5e9;
+    --shadow-light: 0 2px 4px rgba(0,0,0,0.05);
+    --shadow-medium: 0 4px 8px rgba(0,0,0,0.1);
+    --shadow-strong: 0 8px 16px rgba(0,0,0,0.15);
+    --border-radius: 6px;
+    --transition: all 0.2s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--light-bg);
+    color: var(--dark-text);
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+/* Navbar Profissional */
+.navbar-premium {
+    background-color: var(--white-bg) !important;
+    box-shadow: var(--shadow-medium);
+    border-bottom: 3px solid var(--primary-color);
+    padding: 1rem 0;
+}
+
+.navbar-premium .navbar-brand {
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: var(--primary-color) !important;
+}
+
+.navbar-premium .nav-link {
+    color: var(--medium-text) !important;
+    font-weight: 500;
+    transition: var(--transition);
+    padding: 0.8rem 1.2rem !important;
+    border-radius: var(--border-radius);
+    margin: 0 0.2rem;
+}
+
+.navbar-premium .nav-link:hover {
+    background-color: var(--light-bg);
+    color: var(--primary-color) !important;
+}
+
+/* Container Principal */
+.main-container {
+    background-color: var(--white-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    margin: 2rem auto;
+    padding: 2.5rem;
+    max-width: 1200px;
+    border: 1px solid var(--border-color);
+}
+
+/* Cards Profissionais */
+.card-premium {
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    transition: var(--transition);
+    background-color: var(--white-bg);
+    overflow: hidden;
+}
+
+.card-premium:hover {
+    box-shadow: var(--shadow-medium);
+}
+
+.card-premium .card-header {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 1.2rem 1.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+    border-bottom: none;
+}
+
+.card-premium .card-body {
+    padding: 2rem;
+    background-color: var(--white-bg);
+}
+
+/* Botões Profissionais */
+.btn-premium {
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    font-size: 0.875rem;
+    transition: var(--transition);
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-premium:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-medium);
+}
+
+.btn-primary-premium {
+    background-color: var(--primary-color);
+    color: white;
+    border: 2px solid var(--primary-color);
+}
+
+.btn-primary-premium:hover {
+    background-color: #1e3d6f;
+    border-color: #1e3d6f;
+    color: white;
+}
+
+.btn-success-premium {
+    background-color: var(--success-color);
+    color: white;
+    border: 2px solid var(--success-color);
+}
+
+.btn-success-premium:hover {
+    background-color: #5e8f39;
+    border-color: #5e8f39;
+    color: white;
+}
+
+.btn-danger-premium {
+    background-color: var(--accent-color);
+    color: white;
+    border: 2px solid var(--accent-color);
+}
+
+.btn-danger-premium:hover {
+    background-color: #a44440;
+    border-color: #a44440;
+    color: white;
+}
+
+.btn-warning-premium {
+    background-color: var(--warning-color);
+    color: var(--dark-text);
+    border: 2px solid var(--warning-color);
+}
+
+.btn-warning-premium:hover {
+    background-color: #e6ac00;
+    border-color: #e6ac00;
+    color: var(--dark-text);
+}
+
+/* Formulários Profissionais */
+.form-control-premium {
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 0.75rem 1rem;
+    transition: var(--transition);
+    background-color: var(--white-bg);
+    font-size: 0.875rem;
+}
+
+.form-control-premium:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(44, 90, 160, 0.1);
+    outline: none;
+}
+
+/* Status Badges Profissionais */
+.status-badge {
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-badge.bg-success {
+    background-color: var(--success-color) !important;
+    color: white;
+}
+
+.status-badge.bg-warning {
+    background-color: var(--warning-color) !important;
+    color: var(--dark-text);
+}
+
+.status-badge.bg-danger {
+    background-color: var(--accent-color) !important;
+    color: white;
+}
+
+.status-badge.bg-secondary {
+    background-color: var(--light-text) !important;
+    color: white;
+}
+
+/* Tabelas Profissionais */
+.table-premium {
+    background-color: var(--white-bg);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-light);
+    border: 1px solid var(--border-color);
+}
+
+.table-premium thead {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.table-premium thead th {
+    border: none;
+    padding: 1rem 1.2rem;
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.table-premium tbody tr {
+    transition: var(--transition);
+}
+
+.table-premium tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+.table-premium tbody td {
+    padding: 1rem 1.2rem;
+    vertical-align: middle;
+    border-color: var(--border-color);
+    font-size: 0.875rem;
+}
+
+/* Imagens */
+.image-premium {
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    border: 1px solid var(--border-color);
+    max-width: 100%;
+    height: auto;
+}
+
+/* Diagnóstico Médico Profissional */
+.diagnostico-premium {
+    background-color: #ffffff;
+    border: 2px solid var(--border-color);
+    border-left: 5px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    padding: 2.5rem;
+    margin: 1rem 0;
+    box-shadow: var(--shadow-medium);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #2d3748;
+}
+
+/* Títulos de Seções Médicas */
+.diagnostico-premium h1 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+    margin: 0 0 1.5rem 0;
+}
+
+.diagnostico-premium h2 {
+    color: var(--primary-color);
+    font-size: 1.15rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 0.3rem;
+    margin: 2rem 0 1rem 0;
+    background: linear-gradient(90deg, #f8f9fa 0%, transparent 100%);
+    padding: 0.5rem 0.8rem;
+    border-left: 4px solid var(--primary-color);
+}
+
+.diagnostico-premium h3 {
+    color: var(--secondary-color);
+    font-size: 1.05rem;
+    font-weight: 650;
+    margin: 1.5rem 0 0.8rem 0;
+    padding-left: 1rem;
+    border-left: 3px solid var(--secondary-color);
+    background-color: #f8f9fa;
+    padding: 0.4rem 1rem;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}
+
+.diagnostico-premium h4 {
+    color: #4a5568;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 1.2rem 0 0.6rem 0;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: var(--border-color);
+}
+
+.diagnostico-premium h5 {
+    color: #718096;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin: 1rem 0 0.5rem 0;
+}
+
+.diagnostico-premium h6 {
+    color: #a0aec0;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin: 0.8rem 0 0.4rem 0;
+    font-style: italic;
+}
+
+/* Parágrafos médicos */
+.diagnostico-premium p {
+    margin-bottom: 1rem;
+    color: #2d3748;
+    text-align: justify;
+    line-height: 1.7;
+}
+
+/* Termos médicos importantes */
+.diagnostico-premium strong,
+.diagnostico-premium b {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+/* Listas médicas estruturadas */
+.diagnostico-premium ul,
+.diagnostico-premium ol {
+    margin: 1rem 0;
+    padding-left: 0;
+    color: #2d3748;
+}
+
+.diagnostico-premium li {
+    margin-bottom: 0.6rem;
+    color: #2d3748;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.diagnostico-premium ul li::before {
+    content: "▪";
+    color: var(--primary-color);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+}
+
+.diagnostico-premium ol li::before {
+    counter-increment: list-counter;
+    content: counter(list-counter) ".";
+    color: var(--primary-color);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    font-size: 0.9rem;
+}
+
+.diagnostico-premium ol {
+    counter-reset: list-counter;
+}
+
+/* Seções especiais do laudo médico */
+.diagnostico-premium .secao-medica {
+    background-color: #f7fafc;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.diagnostico-premium .diagnostico-principal {
+    background: linear-gradient(135deg, #e6f3ff 0%, #f0f9ff 100%);
+    border: 2px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    box-shadow: var(--shadow-light);
+}
+
+.diagnostico-premium .recomendacoes {
+    background: linear-gradient(135deg, #f0fff4 0%, #f7fffc 100%);
+    border: 2px solid var(--success-color);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    box-shadow: var(--shadow-light);
+}
+
+/* Terminologia médica destacada */
+.diagnostico-premium .termo-medico {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-underline-offset: 2px;
+}
+
+/* Valores e medidas */
+.diagnostico-premium .valor-medico {
+    color: var(--accent-color);
+    font-weight: 700;
+    background-color: #fff5f5;
+    padding: 0.1rem 0.3rem;
+    border-radius: 3px;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+}
+
+/* Classificações e graus */
+.diagnostico-premium .classificacao {
+    display: inline-block;
+    background-color: var(--warning-color);
+    color: #744210;
+    padding: 0.3rem 0.6rem;
+    border-radius: 15px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0.2rem 0.3rem 0.2rem 0;
+}
+
+.diagnostico-premium .classificacao.severo {
+    background-color: #fed7d7;
+    color: #c53030;
+}
+
+.diagnostico-premium .classificacao.moderado {
+    background-color: #fef5e7;
+    color: #d69e2e;
+}
+
+.diagnostico-premium .classificacao.leve {
+    background-color: #f0fff4;
+    color: #38a169;
+}
+
+/* Títulos principais */
+h1, h2 {
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+h3, h4, h5, h6 {
+    color: var(--secondary-color);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+/* Loading Spinner Profissional */
+.spinner-premium {
+    width: 32px;
+    height: 32px;
+    border: 3px solid var(--border-color);
+    border-left: 3px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Animations suaves */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.4s ease-out;
+}
+
+/* Alerts profissionais */
+.alert {
+    border-radius: var(--border-radius);
+    border: 1px solid;
+    padding: 1rem 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    border-color: var(--success-color);
+    color: #155724;
+}
+
+.alert-warning {
+    background-color: #fff3cd;
+    border-color: var(--warning-color);
+    color: #856404;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    border-color: var(--accent-color);
+    color: #721c24;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-container {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+    
+    .card-premium .card-body {
+        padding: 1.5rem;
+    }
+    
+    .btn-premium {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.8rem;
+    }
+    
+    .diagnostico-premium {
+        padding: 1.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .table-premium {
+        font-size: 0.8rem;
+    }
+    
+    .table-premium thead th,
+    .table-premium tbody td {
+        padding: 0.75rem 0.8rem;
+    }
+}
+
+/* Utilities */
+.text-primary { color: var(--primary-color) !important; }
+.text-secondary { color: var(--secondary-color) !important; }
+.text-muted { color: var(--light-text) !important; }
+.bg-light { background-color: var(--light-bg) !important; }
+.border-top { border-top: 1px solid var(--border-color) !important; }
+.border-bottom { border-bottom: 1px solid var(--border-color) !important; }
+
+/* Focus states para acessibilidade */
+.btn-premium:focus,
+.form-control-premium:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
