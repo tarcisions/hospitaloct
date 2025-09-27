@@ -94,34 +94,6 @@ python manage.py runserver 0.0.0.0:5000
 - **Sistema**: http://localhost:5000
 - **Admin**: http://localhost:5000/admin
 
-## 🌐 Deploy no Replit
-
-### 1. Importar Projeto
-1. Acesse https://replit.com
-2. Clique em "Import from GitHub"
-3. Cole a URL do repositório
-4. Clique em "Import"
-
-### 2. Configurar Variáveis de Ambiente
-1. No painel lateral, clique no ícone de "Secrets" (🔒)
-2. Adicione a seguinte variável:
-   - **Key**: `GEMINI_API_KEY`
-   - **Value**: Sua chave da API do Google Gemini
-
-### 3. Executar o Projeto
-1. Clique no botão "Run"
-2. O projeto será iniciado automaticamente em `https://seu-projeto.replit.app`
-
-### 4. Configurar Provedor de IA
-1. Acesse o painel admin: `https://seu-projeto.replit.app/admin`
-2. Faça login com o superusuário
-3. Vá em "Provedores de IA" e clique em "Adicionar"
-4. Configure:
-   - **Nome**: `Gemini AI`
-   - **API URL**: `https://generativelanguage.googleapis.com`
-   - **API Key**: Sua chave do Gemini
-   - **Ativo**: ✅ Marcado
-
 ## 🔑 Obtendo Chave da API do Google Gemini
 
 ### 1. Acesse o Google AI Studio
@@ -346,12 +318,6 @@ Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes
 4. Push para a branch (`git push origin feature/nova-feature`)
 5. Abra um Pull Request
 
-## 📞 Suporte
-
-Para suporte técnico:
-- 📧 Email: suporte@seu-dominio.com
-- 📱 WhatsApp: (11) 99999-9999
-- 💬 Chat: Disponível no sistema
 
 ## 📚 Recursos Adicionais
 
